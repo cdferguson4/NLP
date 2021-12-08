@@ -6,7 +6,7 @@ import nltk
 from pathlib import Path
 import pandas as pd
 
-# nltk.download("stopwords")
+nltk.download("stopwords")
 
 stops = stopwords.words("english")
 
@@ -36,7 +36,7 @@ stops += more_stops
 
 items = blob.word_counts.items()
 
-# print(items)
+print(items)
 
 clean_items = [i for i in items if i[0] not in stops]
 
@@ -57,4 +57,5 @@ df.plot.bar(x="word", y="count", legend=False,
             color=["y", "c", "m", "b", "g", "r"])
 
 plt.gcf().tight_layout()
-plt.show
+
+plt.show()
